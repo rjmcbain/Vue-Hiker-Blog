@@ -1,27 +1,28 @@
 <template>
   <div id="home">
     <h1>Home</h1>
-    <PostList :posts="posts" />
+    <div v-if="error">{{ error }}</div>
+    <div v-if="posts.length">
+      <PostList v-if="showPosts" :posts="posts" />
+    </div>
+    <div v-else>Loading...</div>
+    <button @click="showPosts = !showPosts">Toggle Posts</button>
+    <button @click="posts.pop()">Delete a Post</button>
   </div>
 </template>
 
 <script>
 import PostList from "../components/PostList";
 import { ref } from "@vue/reactivity";
+import getPosts from "../composables/getPosts";
 export default {
   name: "Home",
   components: { PostList },
   setup() {
-    const posts = ref([
-      {
-        title: "Welcome to the blog",
-        body:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-        id: 1,
-      },
-      { title: "Top 5 CSS tips", body: "Lorem ipsum", id: 2 },
-    ]);
-    return { posts };
+    const { posts, error, load } = getPosts();
+    load();
+    const showPosts = ref(true);
+    return { posts, showPosts, error };
   },
 };
 </script>

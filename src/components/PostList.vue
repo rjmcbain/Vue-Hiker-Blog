@@ -7,12 +7,13 @@
 </template>
 
 <script>
+import { onMounted } from "@vue/runtime-core";
 import SinglePost from "./SinglePost";
 export default {
   props: ["posts"],
   components: { SinglePost },
   setup(props) {
-    console.log(props.posts);
+    onMounted(() => {});
   },
 };
 </script>
