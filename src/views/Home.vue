@@ -5,9 +5,9 @@
     <div v-if="posts.length">
       <PostList v-if="showPosts" :posts="posts" />
     </div>
-    <div v-else>Loading...</div>
-    <button @click="showPosts = !showPosts">Toggle Posts</button>
-    <button @click="posts.pop()">Delete a Post</button>
+    <div v-else><Spinner /></div>
+    <!-- <button @click="showPosts = !showPosts">Toggle Posts</button>
+    <button @click="posts.pop()">Delete a Post</button> -->
   </div>
 </template>
 
@@ -15,9 +15,10 @@
 import PostList from "../components/PostList";
 import { ref } from "@vue/reactivity";
 import getPosts from "../composables/getPosts";
+import Spinner from "../components/Spinner";
 export default {
   name: "Home",
-  components: { PostList },
+  components: { PostList, Spinner },
   setup() {
     const { posts, error, load } = getPosts();
     load();
@@ -27,4 +28,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+</style>

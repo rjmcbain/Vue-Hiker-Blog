@@ -5,6 +5,10 @@ const getPost = (id) => {
   const error = ref(null);
   const load = async () => {
     try {
+      // Simulates delay
+      await new Promise((resolve) => {
+        setTimeout(resolve, 500);
+      });
       let data = await fetch(`http://localhost:5000/posts/${id}`);
       console.log(data);
       if (!data.ok) {

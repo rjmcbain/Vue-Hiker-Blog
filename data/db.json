@@ -4,13 +4,19 @@
       "id": 1,
       "title": "Welcome to the new blog",
       "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-      "tags": ["webdev", "coding", "news"]
+      "tags": ["camping", "hiking", "news"]
     },
     {
       "id": 2,
-      "title": "Top 5 CSS tips",
+      "title": "Top 5 Camp Spots In Washington",
       "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-      "tags": ["css", "coding", "webdev"]
+      "tags": ["backpacking", "hiking", "top5"]
+    },
+    {
+      "title": "Best Lakes For Fishing",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
+      "tags": ["fishing"],
+      "id": 3
     }
   ]
 }
