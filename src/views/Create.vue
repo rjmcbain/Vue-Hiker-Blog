@@ -24,7 +24,6 @@ export default {
     const tags = ref([]);
 
     const router = useRouter();
-    console.log(router);
 
     const handleKeydown = () => {
       if (!tags.value.includes(tag.value)) {
@@ -50,6 +49,7 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
       });
+      router.push({ name: "Home" });
     };
 
     return { title, body, tag, handleKeydown, tags, handleSubmit };

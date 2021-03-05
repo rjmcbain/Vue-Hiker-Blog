@@ -10,7 +10,7 @@ const getPosts = () => {
         setTimeout(resolve, 500);
       });
       let data = await fetch("http://localhost:5000/posts");
-      console.log(data);
+      // console.log(data);
       if (!data.ok) {
         throw Error("No Data Available");
       }

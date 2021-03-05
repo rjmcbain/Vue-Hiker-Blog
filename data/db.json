@@ -4,19 +4,48 @@
       "id": 1,
       "title": "Welcome to the new blog",
       "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-      "tags": ["camping", "hiking", "news"]
+      "tags": [
+        "camping",
+        "hiking",
+        "news"
+      ]
     },
     {
       "id": 2,
       "title": "Top 5 Camp Spots In Washington",
       "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-      "tags": ["backpacking", "hiking", "top5"]
+      "tags": [
+        "backpacking",
+        "hiking",
+        "top5"
+      ]
     },
     {
       "title": "Best Lakes For Fishing",
       "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
-      "tags": ["fishing"],
+      "tags": [
+        "fishing"
+      ],
       "id": 3
+    },
+    {
+      "title": "Summer Adventures",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
+      "tags": [
+        "summer",
+        "adventures"
+      ],
+      "id": 4
+    },
+    {
+      "title": "Winter Snowshoeing",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur quod repellat recusandae reiciendis, laboriosam labore sed aliquid quisquam esse quos.",
+      "tags": [
+        "winter",
+        "snowshoeing",
+        "outdoors"
+      ],
+      "id": 5
     }
   ]
 }
