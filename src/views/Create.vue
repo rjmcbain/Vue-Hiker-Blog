@@ -47,7 +47,7 @@ export default {
         setTimeout(resolve, 2000);
       });
       const res = await projectFirestore.collection("posts").add(post);
-      console.log(res);
+      // console.log(res);
       router.push({ name: "Home" });
     };
 
