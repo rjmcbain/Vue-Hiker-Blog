@@ -5,7 +5,6 @@ const useTags = (posts) => {
   const tagSet = new Set();
 
   posts.forEach((item) => {
-    console.log(item);
     item.tags.forEach((tag) => {
       tagSet.add(tag);
     });

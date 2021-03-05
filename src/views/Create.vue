@@ -16,6 +16,7 @@
 <script>
 import { ref } from "@vue/reactivity";
 import { useRouter } from "vue-router";
+import { projectFirestore, timestamp } from "../firebase/config";
 export default {
   setup() {
     const title = ref("");
@@ -38,17 +39,15 @@ export default {
         title: title.value,
         body: body.value,
         tags: tags.value,
+        createdAt: timestamp(),
       };
 
       // Simulates delay
       await new Promise((resolve) => {
         setTimeout(resolve, 2000);
       });
-      await fetch("http://localhost:5000/posts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(post),
-      });
+      const res = await projectFirestore.collection("posts").add(post);
+      console.log(res);
       router.push({ name: "Home" });
     };
 

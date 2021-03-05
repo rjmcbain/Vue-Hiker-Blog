@@ -1,4 +1,5 @@
 import { ref } from "@vue/reactivity";
+import { projectFirestore } from "../firebase/config";
 
 const getPosts = () => {
   const posts = ref([]);
@@ -9,12 +10,14 @@ const getPosts = () => {
       await new Promise((resolve) => {
         setTimeout(resolve, 500);
       });
-      let data = await fetch("http://localhost:5000/posts");
-      // console.log(data);
-      if (!data.ok) {
-        throw Error("No Data Available");
-      }
-      posts.value = await data.json();
+      const res = await projectFirestore
+        .collection("posts")
+        .orderBy("createdAt")
+        .get();
+      posts.value = res.docs.map((doc) => {
+        // console.log(doc.data(), doc.id);
+        return { ...doc.data(), id: doc.id };
+      });
     } catch (err) {
       error.value = err.message;
       console.log(error.value);

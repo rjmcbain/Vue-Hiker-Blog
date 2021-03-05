@@ -1,4 +1,5 @@
 import { ref } from "@vue/reactivity";
+import { projectFirestore } from "../firebase/config";
 
 const getPost = (id) => {
   const post = ref(null);
@@ -9,12 +10,14 @@ const getPost = (id) => {
       await new Promise((resolve) => {
         setTimeout(resolve, 500);
       });
-      let data = await fetch(`http://localhost:5000/posts/${id}`);
-      console.log(data);
-      if (!data.ok) {
+      let res = await projectFirestore
+        .collection("posts")
+        .doc(id)
+        .get();
+      if (!res.exists) {
         throw Error("That post does not exist");
       }
-      post.value = await data.json();
+      post.value = { ...res.data(), id: res.id };
     } catch (err) {
       error.value = err.message;
       console.log(error.value);
