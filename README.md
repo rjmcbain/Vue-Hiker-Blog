@@ -1,5 +1,7 @@
 # hikers-blog
 
+https://hikers-blog.web.app/
+
 ## Project setup
 ```
 npm install
